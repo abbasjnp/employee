@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~font-awesome/css/font-awesome.css';
+
+.icon-color{
+    color: white;
+    background-color: blue;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn{
+    border: none;
+    padding: 12px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-add {
+    background-color: #017cff;
+    color: white;
+    border: 1px solid #017cff;
+
+   
+  }
+
+  .btn-cancel {
+    background-color: white;
+    color: black;
+    border: 1px solid #555555;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .btn-add:hover {
+    background-color: blue;
+    color: white;
+  }
+

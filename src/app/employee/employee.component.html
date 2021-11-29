@@ -1,0 +1,62 @@
+<form [formGroup]="filterForm" >
+<table id="myTable">
+    <tr class="header">
+        <th style="width:5%;">#</th>
+        <th style="width:20%;">Name</th>
+        <th style="width:20%;">Job Title</th>
+        <th style="width:5%;">Age</th>
+        <th style="width:15%;">Start Date</th>
+        <th style="width:15%;">End Date</th>
+        <th style="width:20%;">Action
+            <a style="cursor: pointer;">
+                <i (click)="openDialog()" class="icon-color r1 fa fa-user-plus"></i>
+            </a>
+        </th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input formControlName="name" type="text" placeholder="Search By Name" title="Type in a name">
+        </td>
+        <td>
+            <select formControlName="title" class="dd-job-title" name="cars" id="cars">
+                <option value="" [disabled]="true">--Select--</option>
+                <option *ngFor="let title of titleList" [selected]="" [value]="title.name">
+                    {{title.name}}
+                </option>
+            </select>
+        </td>
+        <td>
+            <input formControlName="age" type="text" placeholder="Age" title="Type in a name">
+
+        </td>
+        <td>
+            <input formControlName="startDate" type="date"  name="birthday">
+        </td>
+        <td>
+            <input formControlName="endDate" type="date"  name="birthday">
+        </td>
+        <td>
+            <i (click)="filterData()" class="icon-color r2 fa fa-filter"></i>
+            <i (click)="resetFilterForm()" class="icon-color r2 fa fa-times"></i>
+        </td>
+    </tr>
+    <tr *ngFor="let emp of employees;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.jobTitle}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.startDate}}</td>
+        <td>
+            <div [ngClass]="{'cw':emp.endDate=='Currently Working'}">
+                {{emp.endDate}}
+            </div>
+        </td>
+        <td>
+            <i (click)="updateEmployeeDetails(emp)" class="icon-color r2 fa fa-eye"></i>
+            <i *ngIf="employees.length>1" (click)="deleteEmployeeDetail(emp)" class="icon-color r2 fa fa-trash"></i>
+        </td>
+
+    </tr>
+</table>
+</form>

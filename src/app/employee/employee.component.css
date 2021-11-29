@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .icon-color{
+    color: white;
+    background-color: #017cff;
+  
+}
+
+.r1 {
+  border-radius: 5px;
+    padding: 2px 4px;
+    font-size: 16px
+}
+.r2{
+  border-radius: 5px;
+  padding: 7px 11px;
+  font-size: 14px;
+  margin-right: 4px;
+}
+.age{
+  width: 35%;
+}
+
+input{
+  padding:6px;
+}
+
+input::-webkit-input-placeholder {
+  font-weight: 600;
+}
+
+.dd-job-title{
+  width: 100%;
+    padding: 6px;
+}
+
+input::-webkit-datetime-edit-fields-wrapper{
+  font-size: 14px;
+}
+
+.cw{
+    background-color: #5ab55d;
+    color:#ffffff;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 2px
+}
+/* .fa{
+  color: white;
+  background-color: blue;
+  padding: 2px;
+  border-radius: 5px;  
+} */

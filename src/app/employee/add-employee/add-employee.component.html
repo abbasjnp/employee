@@ -1,0 +1,52 @@
+<h3 *ngIf="!isEdit">Add New Employee</h3>
+<h3 *ngIf="isEdit" >Update Employee Details</h3>
+
+<div>
+    <form [formGroup]="addEmployeeForm" (ngSubmit)="submitData()">
+      <label for="fname">Name
+        <span class="val-error" *ngIf="(addEmployeeForm.controls.name.touched || submitted) && addEmployeeForm.controls.name.errors?.required">
+          Name is required
+        </span>
+      </label>
+      <input formControlName="name" required type="text" name="name" placeholder="Name"> 
+
+
+      <label>Job Title
+        <span class="val-error" *ngIf="(addEmployeeForm.controls.jobTitle.touched || submitted) && addEmployeeForm.controls.jobTitle.errors?.required">
+          Job title is required
+        </span>
+      </label>
+      <select formControlName="jobTitle" required class="dd-job-title" >
+        <option value="" [disabled]="true">--Select--</option>
+        <option *ngFor="let title of titleList"  [value]="title.name">
+            {{title.name}}
+          </option>         
+      </select>
+
+      <label >Age
+        <span class="val-error" *ngIf="(addEmployeeForm.controls.age.touched || submitted) && addEmployeeForm.controls.age.errors?.required">
+          Age is required
+        </span>
+      </label>
+      <input formControlName="age" required type="text" name="age" placeholder="Age">
+
+      <label>Start Date
+        <span class="val-error" *ngIf="(addEmployeeForm.controls.startDate.touched || submitted) && addEmployeeForm.controls.startDate.errors?.required">
+          Start Date is required
+        </span>
+      </label>
+      <input formControlName="startDate" required type="date"  name="startDate">
+
+      <label>End Date
+        <span class="val-error" *ngIf="(addEmployeeForm.controls.endDate.touched || submitted) && addEmployeeForm.controls.endDate.errors?.required">
+          End Date is required
+        </span>
+      </label>
+      <input formControlName="endDate" required type="date"  name="endDate">
+
+      <button *ngIf="!isEdit"  type="submit" class="btn btn-add">Add New Employee</button>
+      <button *ngIf="isEdit"  type="submit" class="btn btn-add">Update Employee Details</button>
+
+      <button (click)="cancel()" type="button" class="btn btn-cancel">Cancel</button>   
+    </form>
+  </div>
